@@ -1,0 +1,43 @@
+{
+  "steps": {
+    "step_0_start_milvus": {
+      "status": "done",
+      "description": "Start Milvus via docker-compose",
+      "completed_at": "2026-03-01"
+    },
+    "step_1_python_env": {
+      "status": "done",
+      "description": "Create venv, install pymilvus + open-clip-torch + torch + torchvision + Pillow + numpy + tqdm. Reinstall torch with CUDA.",
+      "completed_at": "2026-03-01"
+    },
+    "step_2_create_collections": {
+      "status": "done",
+      "description": "Create `images` and `categories` collections in Milvus",
+      "scripts": [
+        "01_create_images_collection.py",
+        "02_create_categories_collection.py"
+      ],
+      "completed_at": "2026-03-01"
+    },
+    "step_3_categorize_images": {
+      "status": "done",
+      "script": "03_categorize.py",
+      "last_processed_index": 798,
+      "total_images": 798,
+      "categories_created": 740
+    },
+    "step_4_tune": {
+      "status": "pending",
+      "description": "Inspect results, tune THRESHOLD, re-run if needed"
+    }
+  },
+  "config": {
+    "model": "CLIP ViT-B/32",
+    "embedding_dim": 512,
+    "threshold": 0.7,
+    "milvus_host": "localhost",
+    "milvus_port": 19530,
+    "images_dir": "py-images",
+    "output_dir": "py-result-images"
+  }
+}
