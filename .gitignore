@@ -1,0 +1,23 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# PHP
+vendor/
+
+# IDE
+.idea/
+
+# Docker volumes
+volumes/
+
+# Images (downloaded & generated)
+py-images/
+py-result-images/
+php-result-images/
+
+# Runtime / generated files
+errors.log
+multi_image_categories.txt
